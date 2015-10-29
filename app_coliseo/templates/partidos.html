@@ -1,2 +1,10 @@
-{% extends "index.html" %}
-hola
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}

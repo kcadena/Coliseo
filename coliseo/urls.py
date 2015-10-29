@@ -20,8 +20,8 @@ from app_coliseo.views import IndexView,Partidos,Equipos
 urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', IndexView.as_view()),
-    url(r'^partidos$', Partidos.as_view()),
-    url(r'^equipos$', Equipos.as_view()),
+    url(r'^$', IndexView.as_view(),name="index"),
+    url(r'^partidos$', Partidos.as_view(), name="partidos"),
+    url(r'^equipos$', Equipos.as_view(),name="equipos"),
 
 ]
