@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from app_coliseo.views import IndexView
+from app_coliseo.views import IndexView,Partidos,Equipos
 
 urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', IndexView.as_view()),
+    url(r'^partidos$', Partidos.as_view()),
+    url(r'^equipos$', Equipos.as_view()),
 
 ]
