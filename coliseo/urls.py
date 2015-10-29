@@ -18,6 +18,8 @@ from django.contrib import admin
 from app_coliseo.views import IndexView
 
 urlpatterns = [
+
     url(r'^admin/', include(admin.site.urls)),
-    url(r"",IndexView.as_view()),
+    url(r'^$', IndexView.as_view()),
+
 ]
