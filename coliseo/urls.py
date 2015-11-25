@@ -1,5 +1,7 @@
 """coliseo URL Configuration
 
+pruebas kcadena
+
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
 Examples:
@@ -15,7 +17,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from app_coliseo.views import IndexView,Partidos,Equipos
 
 urlpatterns = [
+
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', IndexView.as_view(),name="index"),
+    url(r'^partidos$', Partidos.as_view(), name="partidos"),
+    url(r'^equipos$', Equipos.as_view(),name="equipos"),
+
 ]
