@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^$', IndexView.as_view(),name="index"),
     url(r'^partidos$', Partidos.as_view(), name="partidos"),
     url(r'^equipos$', Equipos.as_view(),name="equipos"),
+    url(r'^persona$', 'app_coliseo.views.Personas'),
 
 ]
