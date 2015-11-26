@@ -46,32 +46,21 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
+            <li class="{% url 'index' %}"><a href="#">Home</a></li>
+            <li><a href="{% url 'equipos' %}">equipos</a></li>
+            <li><a href="{% url 'partidos' %}">partidos</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Arbitros</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Disciplinas</a></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
-
-
-            <!--  este dropdown debemos utilizar los datos de la base de datos -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Campeonatos <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Interroscas</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Facea Ingenieria</a></li>
-              </ul>
-            </li>
-
-
-            <li><a href="{% url 'equipos' %}">programacion</a></li>
-            <li><a href="{% url 'partidos' %}">Resultados</a></li>
-            <li><a href="{% url 'partidos' %}">Administracion</a></li>
-            
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -118,9 +107,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="static/js/jquery-1.11.3.min.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
