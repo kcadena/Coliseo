@@ -21,7 +21,7 @@
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="static/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -68,9 +68,8 @@
             </li>
 
 
-            <li><a href="{% url 'equipos' %}">programacion</a></li>
-            <li><a href="{% url 'partidos' %}">Resultados</a></li>
-            <li><a href="{% url 'partidos' %}">Administracion</a></li>
+            <li><a href="{% url 'equipo' %}">programacion</a></li>
+            <li><a href="{% url 'partido' %}">Resultados</a></li>
             
           </ul>
         </div><!--/.nav-collapse -->
@@ -78,7 +77,6 @@
     </nav>
 
     <div class="container theme-showcase" role="main">
-
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>ADRIANA BENITEZ</h1>
@@ -88,26 +86,12 @@
 
 
     <div class="container">
+      <div class="row">   
+      {% block persona %}{% endblock %}
+      {% block base %}{% endblock %}
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>futbol sala</h2>
-          <p></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>baloncesto</h2>
-          <p></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>volleyball</h2>
-          <p></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
+      
+      <hr>      
 
       <footer>
         <p>&copy; UDENAR 2015</p>

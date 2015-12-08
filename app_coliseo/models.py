@@ -11,7 +11,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
@@ -85,6 +84,9 @@ class Campeonato(models.Model):
     fecha_final = models.DateField()
     id_disciplina = models.ForeignKey('Disciplina', db_column='id_disciplina')
 
+    def __str__(self):
+        return self.nombre_campeonato
+
     class Meta:
         managed = False
         db_table = 'campeonato'
@@ -93,6 +95,9 @@ class Campeonato(models.Model):
 class Disciplina(models.Model):
     id_disciplina = models.IntegerField(primary_key=True)
     nombre_diciplina = models.CharField(max_length=50, blank=True, null=True)
+   
+    def __str__(self):
+        return str(self.nombre_diciplina)
 
     class Meta:
         managed = False
@@ -148,6 +153,9 @@ class Equipo(models.Model):
     nombre_equipo = models.CharField(max_length=50)
     id_campeonato = models.ForeignKey(Campeonato, db_column='id_campeonato')
     id_representante = models.ForeignKey('Persona', db_column='id_representante')
+   
+    def __str__(self):
+        return self.nombre_equipo
 
     class Meta:
         managed = False
@@ -159,6 +167,9 @@ class Jugador(models.Model):
     id_equipo = models.ForeignKey(Equipo, db_column='id_equipo')
     id_persona = models.ForeignKey('Persona', db_column='id_persona')
 
+    def __str__(self):
+        return str(self.id_persona)
+
     class Meta:
         managed = False
         db_table = 'jugador'
@@ -169,6 +180,9 @@ class Lugar(models.Model):
     nombre_lugar = models.CharField(max_length=50, blank=True, null=True)
     direccion = models.CharField(max_length=100, blank=True, null=True)
     observacion = models.CharField(max_length=200, blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre_lugar
 
     class Meta:
         managed = False
@@ -183,6 +197,9 @@ class Partido(models.Model):
     id_lugar = models.ForeignKey(Lugar, db_column='id_lugar')
     planilla = models.CharField(max_length=200, blank=True, null=True)
     observacion = models.CharField(max_length=200, blank=True, null=True)
+
+    def __str__(self):
+        return str(str(self.id_partido)+" - "+str(self.id_equipo_local)+" - "+str(self.id_equipo_visitante)+" - "+str(self.fecha_partido))
 
     class Meta:
         managed = False
@@ -225,14 +242,21 @@ class Persona(models.Model):
     es_arbitro = models.CharField(max_length=1, blank=True, null=True)
     fotografia = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return str(self.p_nombre+" "+self.o_nombre+" "+self.p_apellido+" "+self.s_apellido)
+
     class Meta:
         managed = False
         db_table = 'persona'
 
 
+
 class Rol(models.Model):
     id_rol = models.IntegerField(primary_key=True)
     nombre_rol = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre_rol
 
     class Meta:
         managed = False
@@ -242,7 +266,8 @@ class Rol(models.Model):
 class TipoIdentificacion(models.Model):
     id_tipo_identificacion = models.IntegerField(primary_key=True)
     nombre_ti = models.CharField(max_length=50, blank=True, null=True)
-
+    def __str__(self):
+        return self.nombre_ti
     class Meta:
         managed = False
         db_table = 'tipo_identificacion'
