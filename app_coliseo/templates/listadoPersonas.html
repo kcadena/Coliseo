@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+
+{% block lista%}
+
+<h1>Listado Personas</h1>
+<hr>
+<br>
+<div class="row">
+    <div class="col-md-4">
+       <a class="btn btn-primary" href="{% url 'persona' %}" role="button">Agregar Persona &raquo;</a>
+    </div>
+</div>
+
+<br>
+<table class="display" cellspacing="0" width="100%" id = "myTable">
+    <thead>
+        <tr>
+            <th>
+                Primer Nombre
+            </th>
+            <th>
+                Segundo Nombre
+            </th>
+            <th>
+                Primer Apellido
+            </th>
+            <th>
+                Segundo Apellido
+            </th>
+            <th>
+                Tipo ID
+            </th>
+            <th>
+                # Identificacion
+            </th>
+            <th>
+                Fecha Nacimiento
+            </th>
+            <th>
+                Genero
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+	
+	{% for persona in personas %}
+		<tr>
+			<td>
+				{{persona.p_nombre}} 					
+			</td>
+			<td>
+				{{persona.o_nombre}} 					
+			</td>
+			<td>
+				{{persona.p_apellido}} 					
+			</td>
+			<td>
+				{{persona.s_apellido}} 					
+			</td>
+			<td>
+				{{persona.id_tipo_identificacion}} 					
+			</td>
+            <td>
+                {{persona.identificacion}}                  
+            </td>
+            <td>
+                {{persona.fecha_nacimiento}}                  
+            </td>
+            <td>
+                {{persona.genero}}                  
+            </td>
+		</tr>
+	
+	{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}

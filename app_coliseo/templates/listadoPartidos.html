@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+
+{% block lista%}
+
+<h1>Listado de Partidos</h1>
+<hr>
+<br>
+<div class="row">
+    <div class="col-md-4">
+       <a class="btn btn-primary" href="{% url 'partidos' %}" role="button">Agregar Partido &raquo;</a>
+    </div>
+</div>
+
+<br>
+<table class="display" cellspacing="0" width="100%" id = "myTable">
+    <thead>
+        <tr>
+                <th>
+                    Equipo Local
+                </th>
+                <th>
+                    Equipo Visitante
+                </th>
+                <th>
+                    Fecha del Partido
+                </th>
+                <th>
+                    Lugar
+                </th>
+                <th>
+                    Planilla
+                </th>
+                <th>
+                    Observación
+                </th>
+        </tr>
+    </thead>
+    <tbody>
+	
+	{% for partido in partidos %}
+		<tr>
+			<td>
+				{{partido.id_equipo_local}} 					
+			</td>
+			<td>
+				{{partido.id_equipo_visitante}} 					
+			</td>
+			<td>
+				{{partido.fecha_partido}} 					
+			</td>
+			<td>
+				{{partido.id_lugar}} 					
+			</td>
+			<td>
+				{{partido.planilla}} 					
+			</td>
+			<td>
+				{{partido.observacion}} 					
+			</td>
+		</tr>
+	
+	{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}

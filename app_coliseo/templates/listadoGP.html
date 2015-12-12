@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+{% block lista%}
+
+<h1>Listado de Anotaciones por Partido</h1>
+<hr>
+<br>
+<div class="row">
+    <div class="col-md-4">
+       <a class="btn btn-primary" href="{% url 'partidoAnotacion' %}" role="button">Agregar Anotaciones &raquo;</a>
+    </div>
+</div>
+
+<br>
+<table class="display" cellspacing="0" width="100%" id = "myTable">
+    <thead>
+        <tr>
+            <th>
+                Partido
+            </th>
+            <th>
+                Jugador 
+            </th>
+            <th>
+                Goles
+            </th>
+            <th>
+                Observación
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+	
+	{% for gp in gps %}
+		<tr>
+			<td>
+				{{gp.id_partido}} 					
+			</td>
+			<td>
+				{{gp.id_jugador}} 					
+			</td>
+			<td>
+				{{gp.cantidad}} 					
+			</td>
+			<td>
+				{{gp.observacion}} 					
+			</td>
+		</tr>
+	
+	{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}

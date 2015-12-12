@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block base %}
+	
+	<div class="panel panel-info">
+        <div class="panel-heading">INGRESO DATOS</div>
+        <div class="panel-body">
+
+        	<div class="btn-group btn-group-justified">
+        	<a type="button" href="{% url 'persona' %}" class="btn btn-success">AGREGAR PERSONA</a>
+			<a type="button" href="{% url 'jugadores' %}" class="btn btn-success">AGREGAR JUGADOR</a>	
+			<a type="button" href="{% url 'campeonato' %}" class="btn btn-success">AGREGAR CAMPEONATO</a>
+			</div>
+
+
+			
+			<div class="btn-group btn-group-justified">
+			<a type="button" href="{% url 'equipo' %}" class="btn btn-success">AGREGAR EQUIPO</a>
+			<a type="button" href="{% url 'partidos' %}" class="btn btn-success">AGREGAR PARTIDO</a>
+			</div>
+
+			<div class="btn-group btn-group-justified">
+			<a type="button" href="{% url 'partidoAnotacion' %}" class="btn btn-success">AGREGAR ANOTACION PARTIDO</a>		
+			<a type="button" href="{% url 'partidoArbitro' %}" class="btn btn-success">AGREGAR ARBITRO A PARTIDO</a>
+			</div>
+            
+        </div>
+    </div>	
+{% endblock base %}

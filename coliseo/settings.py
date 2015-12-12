@@ -80,17 +80,17 @@ WSGI_APPLICATION = 'coliseo.wsgi.application'
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),'HOST':'52.33.166.200',
 #    }
 #}
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'coliseoDB',
+        'NAME': 'coliseo',
         'USER':'postgres',
         'PASSWORD':'123',
-        'HOST':'localhost',
+        'HOST':'52.33.166.200',
         'PORT':'5432'
     }
 }

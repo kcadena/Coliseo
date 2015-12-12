@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block lista%}
+
+<h1>Listado de Partidos</h1>
+<hr>
+<br>
+<div class="row">
+    <div class="col-md-4">
+       <a class="btn btn-primary" href="{% url 'partidoArbitro' %}" role="button">Agregar Partido &raquo;</a>
+    </div>
+</div>
+
+<br>
+<table class="display" cellspacing="0" width="100%" id = "myTable">
+    <thead>
+        <tr>
+            <th>
+                Partido
+            </th>
+            <th>
+                Persona
+            </th>
+            <th>
+                Rol
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+	
+	{% for ap in aps %}
+		<tr>
+			<td>
+				{{ap.id_partido}} 					
+			</td>
+			<td>
+				{{ap.id_persona}} 					
+			</td>
+			<td>
+				{{ap.id_rol}} 					
+			</td>
+		</tr>
+	
+	{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}

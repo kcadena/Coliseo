@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block lista%}
+
+<h1>Listado de Jugadores</h1>
+<hr>
+<br>
+<div class="row">
+    <div class="col-md-4">
+       <a class="btn btn-primary" href="{% url 'jugadores' %}" role="button">Agregar Juegador &raquo;</a>
+    </div>
+</div>
+
+<br>
+<table class="display" cellspacing="0" width="100%" id = "myTable">
+    <thead>
+        <tr>
+            <th>
+                Equipo
+            </th>
+            <th>
+                Persona
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+	
+	{% for equipo in equipos %}
+		<tr>
+			<td>
+				{{equipo.id_equipo}} 					
+			</td>
+			<td>
+				{{equipo.id_persona}} 					
+			</td>
+		</tr>
+	
+	{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}
