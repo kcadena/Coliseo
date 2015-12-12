@@ -46,4 +46,10 @@ class ModelPartidoAnotacion(forms.ModelForm):
 class ModelPartidoArbitro(forms.ModelForm):
 	class Meta:
 		model = PartidoArbitro
+<<<<<<< HEAD
 		fields = '__all__'
+=======
+		fields = '__all__'
+
+		##djaneiro
+>>>>>>> origin/pruebas

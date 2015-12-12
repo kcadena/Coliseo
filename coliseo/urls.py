@@ -23,6 +23,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', IndexView.as_view(),name="index"),
+<<<<<<< HEAD
     url(r'^inicio$', 'app_coliseo.views.Inicio',name="inicio"),
     url(r'^base$', 'app_coliseo.views.Base',name="base"),
     url(r'^persona$', 'app_coliseo.views.Personas',name="persona"),
@@ -40,4 +41,14 @@ urlpatterns = [
     url(r'^partidoAnotacion$', 'app_coliseo.views.PartidoAnotaciones',name="partidoAnotacion"),
     url(r'^partidoArbitro$', 'app_coliseo.views.PartidoArbitros',name="partidoArbitro"),
     url(r'^administrador$', 'app_coliseo.views.Administrador',name="administrador"),    
+=======
+    url(r'^personas$', 'app_coliseo.views.Personas',name="persona"),
+    url(r'^campeonatos$', 'app_coliseo.views.Campeonato',name="campeonato"),
+    url(r'^equipos$', 'app_coliseo.views.Equipo',name="equipo"),
+    url(r'^jugadores$', 'app_coliseo.views.Jugador',name="jugador"),
+    url(r'^partidos$', 'app_coliseo.views.Partido',name="partido"),
+    url(r'^partidos_anotaciones$', 'app_coliseo.views.PartidoAnotacion',name="partidoAnotacion"),
+    url(r'^partidos_arbitros$', 'app_coliseo.views.PartidoArbitro',name="partidoArbitro"),
+    
+>>>>>>> origin/pruebas
 ]

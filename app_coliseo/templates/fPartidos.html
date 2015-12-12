@@ -5,11 +5,21 @@
 {% block persona %}
 
 
+<<<<<<< HEAD
 <div class="panel panel-info" >
   <div class="panel-heading">Partidos</div>
   <div class="panel-body">
     <form  class="form-horizontal" method="POST" action="">{% csrf_token %}
     	<div class="form-group" style="width:30%;margin:auto;">        
+=======
+<div class="panel panel-info">
+  <div class="panel-heading">Partidos</div>
+  <div class="panel-body">
+    <form  class="form-horizontal" method="POST" action="">{% csrf_token %}
+    	<div class="form-group" style="width:30%;margin:auto;">
+
+        
+>>>>>>> origin/pruebas
         ID del Partido:{{form.id_partido}}<br />
         Equipo Local:{{form.id_equipo_local}}<br />
         Equipo Visitante:{{form.id_equipo_visitante}}<br />
@@ -17,6 +27,13 @@
         Lugar{{form.id_lugar}}<br />
         Planilla:{{form.planilla}}<br />
         Observacion:{{form.observacion}}<br />
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> origin/pruebas
         <button type="submit" class="btn btn-info" style="margin-left:40%">ACEPTAR</button>   
 
     	</div>

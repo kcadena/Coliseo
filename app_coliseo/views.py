@@ -33,6 +33,7 @@ def JugadoresList(request):
     jugadores = Jugador.objects.all()
     return render_to_response("listadoJugadores.html", dict(jugadores=jugadores))
 
+<<<<<<< HEAD
 def CampeonatosList(request):
     campeonatos = Campeonato.objects.all()
     return render_to_response("listadoCampeonatos.html", dict(campeonatos=campeonatos))
@@ -48,11 +49,14 @@ def EquiposList(request):
 def APList(request):
     aps = PartidoArbitro.objects.all()
     return render_to_response("listadoAP.html", dict(aps=aps))                        
+=======
+>>>>>>> origin/pruebas
 
 def Personas(request):
 
     if request.method == "POST":
         form = ModelPersona(request.POST)
+<<<<<<< HEAD
         if form.is_valid():
 
             # commit=False means the form doesn't save at this time.
@@ -105,6 +109,8 @@ def Jugadores(request):
 
     if request.method == "POST":
         form = ModelJugador(request.POST)
+=======
+>>>>>>> origin/pruebas
         if form.is_valid():
 
             # commit=False means the form doesn't save at this time.
@@ -112,6 +118,7 @@ def Jugadores(request):
             model_instance = form.save(commit=False)
             #model_instance.timestamp = timezone.now()
             model_instance.save()
+<<<<<<< HEAD
             return HttpResponseRedirect("jugadores")
             
     else:
@@ -179,9 +186,126 @@ def Administrador(request):
             model_instance = form.save(commit=False)
             #model_instance.timestamp = timezone.now()
             model_instance.save()
+=======
+>>>>>>> origin/pruebas
             return HttpResponseRedirect("personas")
             
     else:
         form = ModelPersona()
 
+<<<<<<< HEAD
     return render(request, "fadmin.html", {'form': form})
+=======
+    return render(request, "fPersona.html", {'form': form})
+
+def Campeonato(request):
+
+    if request.method == "POST":
+        form = ModelCampeonato(request.POST)
+        if form.is_valid():
+
+            # commit=False means the form doesn't save at this time.
+            # commit defaults to True which means it normally saves.
+            model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return HttpResponseRedirect("campeonatos")
+    else:
+        form = ModelCampeonato()
+
+    return render(request, "fCampeonato.html", {'form': form})
+
+def Equipo(request):
+
+    if request.method == "POST":
+        form = ModelEquipo(request.POST)
+        if form.is_valid():
+
+            # commit=False means the form doesn't save at this time.
+            # commit defaults to True which means it normally saves.
+            model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return HttpResponseRedirect("equipos")
+    else:
+        form = ModelEquipo()
+
+    return render(request, "fEquipos.html", {'form': form})
+
+def Jugador(request):
+
+    if request.method == "POST":
+        form = ModelJugador(request.POST)
+        if form.is_valid():
+
+            # commit=False means the form doesn't save at this time.
+            # commit defaults to True which means it normally saves.
+            model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return HttpResponseRedirect("jugadores")
+            
+    else:
+        form = ModelJugador()
+
+    return render(request, "fjugador.html", {'form': form})
+
+
+def Partido(request):
+
+    if request.method == "POST":
+        form = ModelPartido(request.POST)
+        if form.is_valid():
+
+            # commit=False means the form doesn't save at this time.
+            # commit defaults to True which means it normally saves.
+            model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return HttpResponseRedirect("partidos")
+            
+    else:
+        form = ModelPartido()
+
+    return render(request, "fPartidos.html", {'form': form})
+
+
+def PartidoAnotacion(request):
+
+    if request.method == "POST":
+        form = ModelPartidoAnotacion(request.POST)
+        if form.is_valid():
+
+            # commit=False means the form doesn't save at this time.
+            # commit defaults to True which means it normally saves.
+            model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return HttpResponseRedirect("partidos_anotaciones")
+            
+    else:
+        form = ModelPartidoAnotacion()
+
+    return render(request, "fPartidoAnotacion.html", {'form': form})
+
+
+def PartidoArbitro(request):
+
+    if request.method == "POST":
+        form = ModelPartidoArbitro(request.POST)
+        if form.is_valid():
+
+            # commit=False means the form doesn't save at this time.
+            # commit defaults to True which means it normally saves.
+            model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return HttpResponseRedirect("partidos_arbitros")
+             
+    else:
+        form = ModelPartidoArbitro()
+
+    return render(request, "fArbitroPartido.html", {'form': form})
+
+
+>>>>>>> origin/pruebas
